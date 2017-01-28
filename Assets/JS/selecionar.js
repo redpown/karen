@@ -1,5 +1,4 @@
-
-   $("form").submit(function(){
+$("form").submit(function(){
        return false;
    }); 
    
@@ -39,21 +38,7 @@
                 }
             });
     });
-    
-    
-    //Carrega as variaveis com os valores da tabela selecionada
-   /* $("tr").hover(function(){
-        $id    = $(this).find("td:nth-child(1)").text(); 
-        $nome  = $(this).find("td:nth-child(2)").text(); 
-        $email = $(this).find("td:nth-child(3)").text(); 
-        $tel   = $(this).find("td:nth-child(4)").text(); 
-                //console.log($id, $nome, $email, $tel);
-            $removed = $(this);   
-            });*/
-    //exclui do banco de dados a tabela selecionada
-   
-            
-   
+
      $(document).on('mouseover','tr',function(){
         $id    = $(this).find("td:nth-child(1)").text(); 
         $nome  = $(this).find("td:nth-child(2)").text(); 
@@ -72,23 +57,19 @@
     
      $(".exluir ").click(function(){
          $removerID = 0;
-        
             $.ajax({
                 url : '..\ajax\ajax.php',
                 type: 'POST',
                 data: { DELETAR : $removerID , ID : $id },
                 cache: false,
-              
                 success: function (data){
                     alert(data);
                     $resp = data;
                     $('table > tbody > tr').remove();
              $('table > tbody').append($resp);
                 }
-                
             });
          $('.delet').modal('hide');
-         
      });
      $(".salvar ").click(function(){
          $UPDATE      = 0;
@@ -107,19 +88,13 @@
                     EMAIL  : $compo_email
                 },
                 cache: false,
-              
                 success: function (data){
                     alert(data);
                     $resp = data;
                     $('table > tbody > tr').remove();
              $('table > tbody').append($resp);
                 }
-                
             });
          $('.campos').modal('hide');//esconde o modal
          $('input').val("");//limpa os inputs
      });
-
-
-
-
