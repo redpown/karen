@@ -8,7 +8,7 @@
         if(e.which == 13){
         alert($procurar);
             $.ajax({
-                url : 'ajax.php',
+                url : '..\ajax\ajax.php',
                 type: 'POST',
                 dataType : 'html',
                 data: {PROCURAR : $procurar},
@@ -26,7 +26,7 @@
         $procurar = $("#nome").val();
         alert($procurar);
             $.ajax({
-                url : 'ajax.php',
+                url : '..\ajax\ajax.php',
                 type: 'POST',
                 dataType : 'html',
                 data: {PROCURAR : $procurar},
@@ -74,7 +74,7 @@
          $removerID = 0;
         
             $.ajax({
-                url : 'ajax.php',
+                url : '..\ajax\ajax.php',
                 type: 'POST',
                 data: { DELETAR : $removerID , ID : $id },
                 cache: false,
@@ -97,7 +97,7 @@
          $compo_tel   = $("#tel").val();
         
             $.ajax({
-                url : 'ajax.php',
+                url : '..\ajax\ajax.php',
                 type: 'POST',
                 data: {
                     UPDATE : $UPDATE ,
