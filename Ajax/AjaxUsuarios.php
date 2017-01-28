@@ -1,6 +1,6 @@
 <?php
 include_once '../Dao/UserDao.php';
-
+$id = $_POST["ID"];
 $Resultado = new \Dao\UserDAO();
-$Resultado->PesquisarNome($_POST["ID"]);
+$Resultado->PesquisarNome($id);
 
